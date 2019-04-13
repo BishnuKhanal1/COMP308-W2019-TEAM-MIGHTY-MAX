@@ -1,0 +1,76 @@
+<main class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-3"></div>
+
+    <div class="col-md-offset-4 col-md-6">
+      <br />
+      <div class="card">
+        <form autocomplete="off" (submit)="onRegisterSubmit()">
+          <div class="card-header text-center">
+            <h1>View Your Profile Here</h1>
+          </div>
+          <div class="card-body">
+            <fieldset class="form-group">
+              <label for="username"><strong> Username:</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="user.username"
+                name="username"
+                id="username"
+                required
+                autocomplete="off"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="password"><strong> Password:</strong></label>
+              <input
+                type="password"
+                class="form-control"
+                [(ngModel)]="user.password"
+                name="password"
+                id="password"
+                required
+                autocomplete="off"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="email"><strong> Email:</strong></label>
+              <input
+                type="email"
+                class="form-control"
+                [(ngModel)]="user.email"
+                name="email"
+                id="email"
+                required
+                autocomplete="off"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="displayName"><strong> Dispaly Name:</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="user.displayName"
+                name="displayName"
+                id="displayName"
+                required
+                autocomplete="off"
+              />
+            </fieldset>
+          </div>
+          <div class="card-footer">
+            <fieldset class="form-group text-center">
+              <input type="submit" class="btn btn-primary" value="Update" />
+              <a routerLink="/home"
+                >&nbsp;&nbsp;&nbsp;
+                <input type="button" class="btn btn-info" value="Cancel" />
+              </a>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-offset-3 col-md-3"></div>
+  </div>
+</main>

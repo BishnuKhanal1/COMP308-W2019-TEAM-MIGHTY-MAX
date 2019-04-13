@@ -36,6 +36,8 @@ import {
 // Route Guards
 import { AuthGuard } from "./guards/auth.guard";
 
+import { ProfileComponent } from "./pages/profile/profile.component";
+
 export function jwtTokenGetter() {
   return localStorage.getItem("id_token");
 }
@@ -55,7 +57,8 @@ export function jwtTokenGetter() {
     ContactDetailsComponent,
     ContactDeleteComponent,
     DetailsComponent,
-    SurveySiteComponent
+    SurveySiteComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
