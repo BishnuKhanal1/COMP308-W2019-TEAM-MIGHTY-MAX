@@ -15,15 +15,22 @@ import { RegisterComponent } from "./pages/register/register.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { ProfileComponent } from "./pages/profile/profile.component";
+import { SurveyListComponent } from "./pages/survey-list/survey-list.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent, data: { title: "Home" } },
   { path: "about", component: AboutComponent, data: { title: "About" } },
   { path: "details", component: DetailsComponent, data: { title: "Details" } },
   {
-    path: "survey-site",
+    path: "survey-site/add",
     component: SurveySiteComponent,
     data: { title: "Survey-site" },
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "survey-site",
+    component: SurveyListComponent,
+    data: { title: "Survey-List" },
     canActivate: [AuthGuard]
   },
   {

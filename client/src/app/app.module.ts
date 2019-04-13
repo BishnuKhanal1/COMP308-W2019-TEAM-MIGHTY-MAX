@@ -37,6 +37,7 @@ import {
 import { AuthGuard } from "./guards/auth.guard";
 
 import { ProfileComponent } from "./pages/profile/profile.component";
+import { SurveyListComponent } from "./pages/survey-list/survey-list.component";
 
 export function jwtTokenGetter() {
   return localStorage.getItem("id_token");
@@ -58,6 +59,7 @@ export function jwtTokenGetter() {
     ContactDeleteComponent,
     DetailsComponent,
     SurveySiteComponent,
+    SurveyListComponent,
     ProfileComponent
   ],
   imports: [
