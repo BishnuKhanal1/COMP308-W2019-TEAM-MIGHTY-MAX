@@ -36,7 +36,7 @@ export class UserSurveylistComponent implements OnInit {
     });
   }
 }
-let countDownDate = new Date("Apr 13, 2019 1:05:05").getTime();
+let countDownDate = new Date("Apr 14, 2019 5:26:20").getTime();
 
 // Update the count down every 1 second
 let x = setInterval(() => {
@@ -60,6 +60,6 @@ let x = setInterval(() => {
   if (distance <= 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
-    // document.getElementById('surveyLink').remove();
+    document.getElementById("surveyLink").remove();
   }
 }, 1000);

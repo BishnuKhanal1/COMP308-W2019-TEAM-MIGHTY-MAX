@@ -33,11 +33,7 @@ const routes: Routes = [
     data: { title: "Survey-List" },
     canActivate: [AuthGuard]
   },
-  {
-    path: "profile",
-    component: ProfileComponent,
-    data: { title: "Profile" }
-  },
+  { path: "profile", component: ProfileComponent, data: { title: "Profile" } },
 
   {
     path: "register",
