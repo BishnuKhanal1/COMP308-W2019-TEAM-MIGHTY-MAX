@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-md-10">
+      <h1 class="display-4">List of Survey's people have made</h1>
+      <br />
+      <br />
+      <div *ngFor="let survey of surveys">
+        <a id="surveyLink" routerLink="survey/{{ survey._id }}">
+          <div class="card-rows">
+            <div class="card bg-primary">
+              <div class="card-body text-center">
+                <h4 id="demo" style="color: white"></h4>
+                <h4 class="card-text" style="color: white">
+                  Survey Name: {{ survey.title }}
+                </h4>
+                <h4 class="card-text" style="color: white">
+                  Survey Type: {{ survey.typeOfSurvey }}
+                </h4>
+                <h4 class="card-text" style="color: white">
+                  Number of questions: 6
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+        <br />
+      </div>
+    </div>
+  </div>
+  <br />
+</div>

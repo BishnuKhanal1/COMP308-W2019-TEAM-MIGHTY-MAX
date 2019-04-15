@@ -8,14 +8,14 @@ import { AboutComponent } from "./pages/about/about.component";
 import { DetailsComponent } from "./pages/details/details.component";
 import { SurveySiteComponent } from "./pages/survey-site/survey-site.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
-import { ContactListComponent } from "./contacts/contact-list/contact-list.component";
-import { ContactDetailsComponent } from "./contacts/contact-details/contact-details.component";
-import { ContactDeleteComponent } from "./contacts/contact-delete/contact-delete.component";
+
 import { RegisterComponent } from "./pages/register/register.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { SurveyListComponent } from "./pages/survey-list/survey-list.component";
+import { SurveyComponent } from "./survey-operations/survey/survey.component";
+import { UserSurveylistComponent } from "./survey-operations/user-surveylist/user-surveylist.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent, data: { title: "Home" } },
@@ -40,31 +40,6 @@ const routes: Routes = [
   },
 
   {
-    path: "contact/contact-list",
-    component: ContactListComponent,
-    data: { title: "Contact List" },
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contact/contact-list/add",
-    component: ContactDetailsComponent,
-    data: { title: "Add Contact" },
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contact/contact-list/edit/:id",
-    component: ContactDetailsComponent,
-    data: { title: "Edit Contact" },
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contact/contact-list/delete/:id",
-    component: ContactDeleteComponent,
-    data: { title: "Add Contact" },
-    canActivate: [AuthGuard]
-  },
-
-  {
     path: "register",
     component: RegisterComponent,
     data: { title: "Register" }
@@ -73,7 +48,17 @@ const routes: Routes = [
   { path: "logout", redirectTo: "/login", pathMatch: "full" },
 
   { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "**", component: PageNotFoundComponent }
+  { path: "**", component: PageNotFoundComponent },
+
+  {
+    path: "surveys",
+    component: UserSurveylistComponent,
+    data: { title: "Surveys made by users" }
+  },
+  {
+    path: "surveys/survey/:id",
+    component: SurveyComponent /*canActivate: [AuthGuard]*/
+  }
 ];
 
 @NgModule({

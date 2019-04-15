@@ -15,11 +15,9 @@ import { AboutComponent } from "./pages/about/about.component";
 import { DetailsComponent } from "./pages/details/details.component";
 import { SurveySiteComponent } from "./pages/survey-site/survey-site.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
-import { ContactListComponent } from "./contacts/contact-list/contact-list.component";
+
 import { RegisterComponent } from "./pages/register/register.component";
 import { LoginComponent } from "./pages/login/login.component";
-import { ContactDetailsComponent } from "./contacts/contact-details/contact-details.component";
-import { ContactDeleteComponent } from "./contacts/contact-delete/contact-delete.component";
 
 // Services
 import {
@@ -38,6 +36,8 @@ import { AuthGuard } from "./guards/auth.guard";
 
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { SurveyListComponent } from "./pages/survey-list/survey-list.component";
+import { SurveyComponent } from "./survey-operations/survey/survey.component";
+import { UserSurveylistComponent } from './survey-operations/user-surveylist/user-surveylist.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem("id_token");
@@ -52,15 +52,14 @@ export function jwtTokenGetter() {
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
-    ContactListComponent,
+    SurveyComponent,
     RegisterComponent,
     LoginComponent,
-    ContactDetailsComponent,
-    ContactDeleteComponent,
     DetailsComponent,
     SurveySiteComponent,
     SurveyListComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserSurveylistComponent
   ],
   imports: [
     BrowserModule,
